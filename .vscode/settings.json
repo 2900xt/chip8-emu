@@ -2,6 +2,8 @@
     "files.associations": {
         "stdlib.h": "c",
         "chip8.h": "c",
-        "cstddef": "c"
+        "cstddef": "c",
+        "time.h": "c",
+        "sdl.h": "c"
     }
 }

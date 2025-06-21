@@ -2,6 +2,12 @@
 #define CHIP8_H
 
 #include <stdint.h>
+#include <stdlib.h>
+#include <time.h>
+#include <stdio.h>
+#include <string.h>
+#include <sys/time.h>
+#include <SDL2/SDL.h>
 
 struct chip8_data
 {
@@ -46,4 +52,15 @@ void chip8_print_state();
 void chip8_load_rom(const char *filename);
 void chip8_load_fonts();
 
+// instruction functions
+void chip8_decode_execute();
+
+// SDL functions
+const int VIDEO_WIDTH = 64;
+const int VIDEO_HEIGHT = 32;
+const unsigned int FONTSET_SZ = 80;
+const unsigned int FONT_OFFSET = 80;
+void platform_init(const char *title, int window_width, int window_height, int texture_width, int texture_height);
+void platform_update(void *buffer, int pitch);
+int process_input(uint8_t *keys);
 #endif
